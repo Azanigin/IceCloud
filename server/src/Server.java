@@ -15,10 +15,14 @@ public class Server {
             serverSocket = new ServerSocket(8190);
             clients = new Vector();
             System.out.println("Сервер запущен");
+            System.out.println(Command.INFO); //для тестирования работы ENUM
 
             while (true) {
                 Socket socket = serverSocket.accept();
+                clients.add(socket);
                 System.out.println("Клиент подключился");
+
+
             }
 
         } catch (IOException e) {
